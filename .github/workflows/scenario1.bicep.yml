@@ -54,7 +54,7 @@ jobs:
       deployStackName: ${{ env.deployStackName }}
       region: ${{ env.region }}
       modulePath: ${{ env.deploymentPath }}
-      bicepParamPath: ${{ env.deploymentPath }}/main.parameters.json
+      bicepParamPath: scenarios/secure-baseline-multitenant/bicep/main.parameters.json
       bicepAdditionalParams: -p webAppPlanSku=${{ env.webAppPlanSku }} --deny-settings-mode 'none'
 
   call-workflow-passing-data:
