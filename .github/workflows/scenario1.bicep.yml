@@ -54,7 +54,7 @@ jobs:
       deployStackName: ${{ env.deployStackName }}
       region: ${{ env.region }}
       modulePath: ${{ env.deploymentPath }}
-      bicepParamPath: ${{ env.deploymentPath }}/main.parameters.jsonc
+      bicepParamPath: ${{ env.deploymentPath }}/main.parameters.json
       bicepAdditionalParams: -p webAppPlanSku=${{ env.webAppPlanSku }} --deny-settings-mode 'none'
 
   call-workflow-passing-data:
@@ -69,5 +69,5 @@ jobs:
       bicepParamPath: ${{ needs.prepare-environment.outputs.bicepParamPath }}
       bicepAdditionalParams: ${{ needs.prepare-environment.outputs.bicepAdditionalParams }}
       # Ensure this value is a boolean
-      destroy: ${{ github.event.inputs.destroy == 'false' }}
+      destroy: ${{ github.event.inputs.destroy == 'true' }}
     secrets: inherit
