@@ -69,5 +69,5 @@ jobs:
       bicepParamPath: ${{ needs.prepare-environment.outputs.bicepParamPath }}
       bicepAdditionalParams: ${{ needs.prepare-environment.outputs.bicepAdditionalParams }}
       # Ensure this value is a boolean
-      destroy: ${{ github.event.inputs.destroy == 'true' }}
+      destroy: ${{ github.event.inputs.destroy == 'false' }}
     secrets: inherit
