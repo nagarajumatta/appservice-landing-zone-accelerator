@@ -55,7 +55,7 @@ jobs:
       region: ${{ env.region }}
       modulePath: ${{ env.deploymentPath }}
       bicepParamPath: scenarios/secure-baseline-multitenant/bicep/main.parameters.json
-      bicepAdditionalParams: -p webAppPlanSku=${{ env.webAppPlanSku }} --deny-settings-mode 'none'
+      bicepAdditionalParams: -p webAppPlanSku=${{ env.webAppPlanSku }}
 
   call-workflow-passing-data:
     name: 'Bicep CICD'
